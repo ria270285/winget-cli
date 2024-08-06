@@ -6,29 +6,21 @@ parameters:
   type: string
 
 steps:
-  - task: DownloadSecureFile@1
-    name: AppInstallerTest
-    displayName: 'Download Source Package Certificate'
-    inputs:
-      secureFile: 'AppInstallerTest.pfx'
+  - powershell: |
+      $httpsCertPath = Join-Path $(Agent.TempDirectory) HttpsCert.pfx
+      $httpsCertPassword = (New-Guid).ToString()
+      dotnet dev-certs https --export-path $httpsCertPath --password $httpsCertPassword
 
-  - task: DownloadSecureFile@1
-    name: HTTPSDevCert
-    displayName: 'Download Kestrel Certificate'
-    inputs:
-      secureFile: 'HTTPSDevCertV2.pfx'
+      $securePassword = ConvertTo-SecureString $httpsCertPassword -AsPlainText
+      Import-PfxCertificate -FilePath $httpsCertPath -Password $securePassword -CertStoreLocation Cert:\LocalMachine\Root
 
-  - task: PowerShell@2
-    displayName: Install Root Certificate
-    inputs:
-      filePath: '${{ parameters.sourceDir }}\src\LocalhostWebServer\InstallDevCert.ps1'
-      arguments: '-pfxpath $(HTTPSDevCert.secureFilePath) -password microsoft'
+      Write-Host "##vso[task.setvariable variable=HttpsCertPath;]$httpsCertPath"
+      Write-Host "##vso[task.setvariable variable=HttpsCertPassword;]$httpsCertPassword"
+    displayName: Create and install localhost HTTPS cert
 
-  - task: PowerShell@2
+  - powershell: ${{ parameters.sourceDir }}\src\LocalhostWebServer\Run-LocalhostWebServer.ps1 '-CertPath $(HttpsCertPath) -CertPassword $(HttpsCertPassword) -OutCertFile $(Agent.TempDirectory)\servercert.cer ${{ parameters.localhostWebServerArgs }}'
     displayName: Launch LocalhostWebServer
-    inputs:
-      filePath: '${{ parameters.sourceDir }}\src\LocalhostWebServer\Run-LocalhostWebServer.ps1'
-      arguments: '-CertPath $(HTTPSDevCert.secureFilePath) -CertPassword microsoft -OutCertFile $(Agent.TempDirectory)\servercert.cer ${{ parameters.localhostWebServerArgs }}'
+      arguments: 
 
   - task: PowerShell@2
     displayName: Setup Local PS Repository
