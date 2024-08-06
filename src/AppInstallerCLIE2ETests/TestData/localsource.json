@@ -44,6 +44,7 @@
     }
   ],
   "Signature": {
-    "CertFile": "%APPINSTALLERTEST_SECUREFILEPATH%"
+    "CertFile": "%AGENT_TEMPDIRECTORY%/TestSigningCert.pfx",
+    "Password": "%TESTSIGNINGCERTPASSWORD%"
   }
 }
