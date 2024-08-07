@@ -355,8 +355,8 @@ NOSEARCH
 NOSEPARATOR
 notalostreference
 NOTAPROPERTY
-notmatch
 NOTIMPL
+notmatch
 NOTRACK
 NOUPDATE
 nowarn
@@ -459,7 +459,6 @@ Roblox
 ronomon
 Roronoa
 rosoft
-rowids
 rowid
 roy
 RRF
@@ -532,10 +531,10 @@ TARG
 taskhostw
 tcs
 TEMPDIRECTORY
-Templating
 templating
 temppath
 testexampleinstaller
+TESTSIGNINGCERTPASSWORD
 thiscouldbeapc
 threehundred
 timespan
@@ -544,8 +543,8 @@ tombstoned
 transitioning
 trimstart
 ttl
-typeparam
 typedef
+typeparam
 UCase
 ucasemap
 UChars
@@ -586,7 +585,6 @@ wcex
 WDAG
 webpages
 Webserver
-websites
 website
 wesome
 wfsopen
