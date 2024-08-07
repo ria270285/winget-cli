@@ -18,7 +18,7 @@ steps:
       Write-Host "##vso[task.setvariable variable=HttpsCert.Password;]$httpsCertPassword"
     displayName: Create and install localhost HTTPS cert
 
-  - pwsh: ${{ parameters.sourceDir }}\src\LocalhostWebServer\Run-LocalhostWebServer.ps1 '-CertPath $(HttpsCert.Path) -CertPassword $(HttpsCert.Password) -OutCertFile $(Agent.TempDirectory)\servercert.cer ${{ parameters.localhostWebServerArgs }}'
+  - pwsh: ${{ parameters.sourceDir }}\src\LocalhostWebServer\Run-LocalhostWebServer.ps1 -CertPath $(HttpsCert.Path) -CertPassword $(HttpsCert.Password) -OutCertFile $(Agent.TempDirectory)\servercert.cer ${{ parameters.localhostWebServerArgs }}
     displayName: Launch LocalhostWebServer
 
   - pwsh: ${{ parameters.sourceDir }}\src\AppInstallerCLIE2ETests\TestData\Configuration\Init-TestRepository.ps1 -Force
