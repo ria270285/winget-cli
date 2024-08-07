@@ -30,7 +30,6 @@ appname
 appshutdown
 APPTERMINATION
 archs
-argumentlist
 ARMNT
 arp
 arphelper
@@ -85,7 +84,6 @@ CLASSNOTREG
 CLOSEAPP
 cloudapp
 clsctx
-clsid
 CMSG
 cobertura
 CODEOWNERS
@@ -139,7 +137,6 @@ ecfr
 ecfrbrowse
 EFGH
 efileresource
-endregion
 ENDSESSION
 EQU
 ERANGE
@@ -148,7 +145,6 @@ errmsg
 ERRORONEXIT
 errstr
 ESRB
-ests
 etest
 etl
 execustom
@@ -256,7 +252,6 @@ ldcase
 learnxinyminutes
 lhs
 LIBYAML
-Linq
 liv
 liwpx
 localizationpriority
@@ -328,12 +323,10 @@ myinstalldir
 mylog
 mysilent
 mysilentwithprogress
-nameof
 Nami
 nativehandle
 NBLGGH
 NESTEDINSTALLER
-netfx
 netlify
 NETSDK
 Newtonsoft
@@ -356,7 +349,6 @@ NOSEPARATOR
 notalostreference
 NOTAPROPERTY
 NOTIMPL
-notmatch
 NOTRACK
 NOUPDATE
 nowarn
@@ -370,7 +362,6 @@ ofile
 oid
 omus
 onefuzz
-ools
 oop
 opensource
 OPTOUT
@@ -384,7 +375,6 @@ packageinuse
 packageinusebyapplication
 PACL
 PARAMETERMAP
-paramref
 pathparts
 Patil
 pcb
@@ -397,7 +387,6 @@ Peet
 peetdev
 PEGI
 pfn
-pfxpath
 pgp
 Pherson
 pid
@@ -476,7 +465,6 @@ savepoint
 schematab
 Scm
 sddl
-SECUREFILEPATH
 secureobject
 securestring
 seof
@@ -531,7 +519,6 @@ TARG
 taskhostw
 tcs
 TEMPDIRECTORY
-templating
 temppath
 testexampleinstaller
 TESTSIGNINGCERTPASSWORD
@@ -544,7 +531,6 @@ transitioning
 trimstart
 ttl
 typedef
-typeparam
 UCase
 ucasemap
 UChars
@@ -558,7 +544,6 @@ uninstallation
 uninstaller
 uninstallprevious
 uninstalls
-Unk
 unknwn
 Unknwnbase
 UNMARSHALING
