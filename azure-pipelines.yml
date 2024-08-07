@@ -451,7 +451,7 @@ jobs:
   - template: templates/e2e-setup.yml
     parameters:
       sourceDir: $(Build.SourcesDirectory)
-      localhostWebServerArgs: '-BuildRoot $(buildOutDir)\E2ETests\LocalhostWebServer -StaticFileRoot $(buildOutDir)\E2ETests\TestLocalIndex -SourceCert $(artifactsDir)\E2ETests\TestSigningCert.cer'
+      localhostWebServerArgs: '-BuildRoot $(buildOutDir)\E2ETests\LocalhostWebServer -StaticFileRoot $(buildOutDir)\E2ETests\TestLocalIndex -SourceCert $(buildOutDir)\E2ETests\TestSigningCert.cer'
 
   - template: templates/e2e-test.template.yml
     parameters:
